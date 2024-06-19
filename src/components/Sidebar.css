@@ -1,0 +1,77 @@
+
+/* Sidebar */
+
+#sidebarWrapper {
+    position: fixed;
+    z-index: 5;
+}
+
+#sidebarWrapper.active {
+    left: 0;
+}
+
+#sidebarWrapper #gameSidebar {
+    position: fixed;
+    top: 0;
+    right: -335px;
+    height: 100vh;
+    width: 335px;
+    transition: all .2s;
+    /* transform: scale(0); */
+    background: rgba(20,34,63,.9);
+}
+
+#sidebarWrapper.active #gameSidebar {
+    right: 0;
+    /* transform: scale(1); */
+}
+
+#sidebarWrapper #sidebarKeys {
+    margin: 30px 20px 20px;
+}
+
+#sidebarWrapper #sidebarHeader {
+    margin-bottom: 20px;
+}
+
+#sidebarWrapper #sidebarHeader img {
+    max-width: 100%;
+}
+
+#sidebarWrapper #sidebarHeader h2 {
+    font-size: 1.15rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo #sidebarKeyCount,
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo #sidebarAdd {
+    display: inline-block;
+    transition: opacity .2s;
+    vertical-align: middle;
+    outline: none;
+}
+
+
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo #sidebarAdd {
+    opacity: 1;
+}
+
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo #sidebarKeyCount,
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo #sidebarAdd:hover,
+#sidebarWrapper #sidebarHeader #sidebarKeyInfo #sidebarAdd:focus {
+    opacity: .6;
+}
+
+@media (max-width: 600px){
+    #sidebarWrapper #gameSidebar {
+        right: -320px;
+        width: 320px;
+        max-width: 100%;
+    }
+}

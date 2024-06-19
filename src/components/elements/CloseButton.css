@@ -1,0 +1,19 @@
+.closeButton {
+    right: 0;
+    top: 0;
+    padding: 7px;
+    color: white;
+    font-size: 1.2rem;
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s;
+    transform-origin: center;
+    outline: none;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+    transform: rotate(15deg);
+}

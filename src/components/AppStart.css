@@ -1,0 +1,488 @@
+/**
+    Media Queries
+    Mobile Breakpoint: 850px
+**/
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+hr {
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid white;
+    opacity: .3;
+}
+
+
+.actionButton {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    margin: 0 15px;
+    vertical-align: middle;
+    transition: all .2s;
+}
+
+.actionButton:hover {
+    opacity: .6;
+}
+
+.actionButton i {
+    margin-right: 3px;
+}
+
+
+/* Forms */
+
+.form {
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form .formInputsWrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.form label {
+    display: block;
+    text-align: left;
+    margin-bottom: .4rem;
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+.formRadioWrapper label {
+    display: inline-block;
+    font-weight: normal;
+    vertical-align: middle;
+    margin-right: .5rem;
+    margin-bottom: 0;
+}
+
+.formRadioWrapper input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.form .inputWrapper {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.form .inputIconWrapper {
+    width: 100%;
+}
+
+.form .submitWrapper {
+    margin-top: 1.8rem;
+    text-align: right;
+}
+
+.toast {
+    font-size: .9rem;
+    padding: 5px 10px;
+    text-align: left;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+.toast.error {
+    background: #ff1a1a;
+    color: white;
+}
+
+
+/* Overlays */
+
+#overlayBG {
+    transition: background .3s;
+    background: transparent;
+}
+
+#overlayBG.activeOverlay {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    left: 0;
+    display: block;
+    background: rgba(0,0,0,.3) !important;
+}
+
+
+/* Popups */
+
+body.activePopup {
+    overflow-y: hidden;
+    /* padding-right: 17px; */
+}
+
+.appPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    transition: all .4s;
+    
+    width: 95%;
+    max-width: 600px;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar,
+.appPopup::-webkit-scrollbar {
+    width: .8em;
+}
+
+html::-webkit-scrollbar-thumb,
+.appPopup::-webkit-scrollbar-thumb {
+  background-color: rgba(90, 93, 99, .7);
+  border: .15em solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  background-clip: padding-box;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+.appPopup::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(90, 93, 99, 1);
+}
+
+.appPopup.popupInit {
+    opacity: 0;
+    top: calc(50% + 10px);
+}
+
+.appPopup .appPopupContent {
+    position: relative;
+    padding: 1.8rem 3rem;
+    text-align: center;
+}
+
+@media (max-width: 426px){
+    .appPopup .appPopupContent {
+        padding: 1.8rem 1.5rem;
+    }
+}
+
+
+/* Navbar */
+
+#navWrapper {
+    max-width: 590px;
+    width: calc(90% - 100px);
+    padding: 14px 50px;
+    border-radius: 0 0 5000px 5000px;
+    margin: 0 auto;
+    background: #14223F;
+    box-shadow: 0 6px 19px -1px rgba(0,0,0,.5);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: -250px;
+    transition: top .5s;
+}
+
+.searchBar {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+.searchBar label {
+    position: absolute;
+    z-index: -1;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.searchBar input::placeholder {
+    color: rgba(255,255,255,.6);
+}
+
+#navbarAdd {
+    font-size: 1.05rem;
+}
+
+.gameKeyCount{
+    opacity: .6;
+    vertical-align: middle;
+}
+
+.gameKeyCount,
+.gameKeyCount .keyCount,
+.gameKeyCount .gameCount {
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+.gameKeyCount .keyCount,
+.gameKeyCount .gameCount {
+    padding: 0 0 0 20px;
+}
+
+.gameKeyCount .keyCount {
+    border-left: 1px solid #fff;
+}
+
+.gameKeyCount .gameCount {
+    border-right: 1px solid #fff;
+    padding-right: 20px;
+}
+
+@media(min-width: 850px){
+    .activePopup #navWrapper {
+        transform: translateX(calc(-50% - 8px));
+    }
+}
+
+
+/* Mobile Nav */
+
+#mobileNavToggleWrapper {
+    text-align: right;
+    font-size: 1.6rem;
+    z-index: 1;
+}
+
+#mobileNavToggleWrapper #mobileNavToggle {
+    margin-right: 0;
+}
+
+
+/* Card List */
+
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 115%;
+    width: 97%;
+    max-width: 1620px;
+    margin: calc(1.8rem + 55px) auto 0;
+}
+
+.gameCard {
+    flex: 0 1 calc(16.6667% - 20px);  /* 6 Cards per row */
+    margin: 13px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.gameCard:not(.shineIn){
+    box-shadow: 0 1px 14px -2px rgba(0,0,0,.5);
+}
+
+.gameCard:not(.shineIn):hover {
+    box-shadow: 0 4px 14px -2px rgba(0,0,0,.5);
+    transform: translateY(-5px);
+    z-index: 1;
+}
+
+.gameCard .gameCardHeader {
+    line-height: 0;
+}
+
+.gameCard .gameCardHeader img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.gameCard .gameCardInfo {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 13px;
+    background-color: #14223F;
+}
+
+.gameCard .gameCardInfo .gameCardName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 10px;
+    font-size: 1rem;
+}
+
+.gameCard .gameCardKeys {
+    text-align: right;
+    flex-shrink: 0;
+    opacity: .6;
+}
+
+.gameCard.hidden {
+    display: none;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1300px){
+    .gameCard {
+        flex: 0 1 calc(20% - 20px); /* 5 Cards per row */
+    }
+}
+
+@media (max-width: 1100px){
+    .gameCard {
+        flex: 0 1 calc(25% - 20px); /* 4 Cards per row */
+    }
+}
+
+@media (min-width: 850px){
+    #mobileNavToggle {
+        display: none;
+    }
+}
+
+@media (max-width: 850px){
+    .gameCard {
+        flex: 0 1 calc(33.3333% - 20px); /* 3 Cards per row */
+    }
+    
+    #navWrapper {
+        width: auto;
+    }
+
+    #primaryNav {
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100vw;
+        background: #14223F;
+        transition: all .2s;
+        overflow: hidden;
+        padding: 70px 0 15px;
+        opacity: 0;
+        width: 100%;
+        pointer-events: none;
+        box-shadow: 0 6px 19px -1px rgba(0,0,0,.7);
+        border-radius: 0 0 60px 60px;
+        text-align: center;
+    }
+
+    #primaryNav.show {
+        opacity: 1;
+        top: 0%;
+        pointer-events: all;
+    }
+}
+
+@media (max-width: 650px){
+    .searchBar input {
+        min-width: 50vw;
+    }
+
+    .gameCard {
+        flex: 0 1 calc(50% - 20px); /* 2 Cards per row */
+    }
+}
+
+@media (max-width: 400px){
+    #primaryNav {
+        border-radius: 0 0 45px 45px;
+    }
+
+    .cardList {
+        max-width: 88%;
+    }
+
+    .gameCard {
+        flex: 0 1 100%; /* 1 Card per row */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+
+.shineIn {
+    animation: shineIn 1s;
+}
+
+@keyframes shineIn {
+    0% { box-shadow: 0 0px 0 0px rgb(255 255 255 / 10%); }
+    40% { box-shadow: 0 0px 8px 6px rgb(255 255 255 / 50%); }
+    70% { box-shadow: 0 0px 8px 6px rgb(255 255 255 / 50%); }
+    100% { box-shadow: 0 0px 0px 0px rgb(255 255 255 / 10%); }
+}
+
+
+/* Card Design - Overlap Bottom Shadow */
+.gameCard {
+    position: relative;
+}
+
+.gameCardName {
+    /* opacity: 0; */
+}
+
+.gameCard .gameCardKeys {
+    opacity: 1;
+}
+
+@media (min-width: 1300px){
+    .gameCard {
+        flex: 0 1 calc(20% - 20px);  /* 5 Cards per row */
+    }
+}
+
+.gameCard .gameCardInfo {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: calc(100% - 26px);
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.5+41,0.8+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 41%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 41%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 41%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+/* Card Design - White Info Hover */
+@media (min-width: 10000px){
+    .gameCard {
+        overflow: visible;
+    }
+    
+    .gameCard .gameCardInfo {
+        width: calc(100% - 38px);
+        background: white;
+        color: #333;
+        z-index: -1;
+        bottom: 1px;
+        border-radius: 5px;
+        transition: all .2s;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .gameCard:hover .gameCardInfo {
+        bottom: -35px;
+        width: calc(100% - 12px);
+        padding-top: 25px;
+    }
+}

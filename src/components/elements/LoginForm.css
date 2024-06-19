@@ -1,0 +1,19 @@
+.registerButtonWrapper {
+    text-align: center;
+    margin-top: .7rem;
+}
+
+.registerButtonWrapper button {
+    text-decoration: underline;
+    font-size: .9rem;
+}
+
+.registerButtonWrapper button:hover {
+    opacity: .6;
+}
+
+@media (max-width: 426px){
+    .loginFormContent {
+        padding: 1.8rem 1.5rem;
+    }
+}

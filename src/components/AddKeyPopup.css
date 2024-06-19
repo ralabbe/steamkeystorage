@@ -1,0 +1,49 @@
+#addGameKeyWrapper {
+    overflow: unset;
+}
+
+#gameKeyInputWrapper:focus ~ ul.suggestionList,
+#gameKeyInputWrapper *:focus ~ ul.suggestionList,
+ul.suggestionList:focus {
+    display: block;
+}
+
+ul.suggestionList::-webkit-scrollbar {
+    width: .6em;
+}
+
+ul.suggestionList::-webkit-scrollbar-thumb {
+  background-color: rgba(90, 93, 99, .9);
+  border-radius: 50px;
+}
+
+ul.suggestionList {
+    list-style: none;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    background: rgba(0,0,0,.75);
+    width: 100%;
+    z-index: 5;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 200px;
+}
+
+ul.suggestionList li {
+    padding: 6px 8px;
+    white-space: nowrap;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    transition: all .2s;
+    outline: none;
+}
+
+ul.suggestionList li:hover,
+ul.suggestionList li:focus {
+    background: rgba(255, 255,255,.2);
+}
